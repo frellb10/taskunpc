@@ -1,8 +1,14 @@
+import Header from './components/Header';
+import ListaTareas from './components/ListaTareas';
+import { tareasIniciales } from './data/tareasIniciales';
+
 function App() {
+  const pendientes = tareasIniciales.filter(tarea => !tarea.completada).length;
+
   return (
     <div>
-      <h1>TaskUPC  Mi Gestor Académico</h1>
-      <p>Bienvenido a mi gestor académico</p>
+      <Header tareasPendientes={pendientes} />
+      <ListaTareas />
     </div>
   );
 }
